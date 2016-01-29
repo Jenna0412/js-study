@@ -9,9 +9,9 @@ while (inputyymmdd === false) {
   }
   if(yymmdd > 0){
 
-    var yy = yymmdd.substr(0,4);
-    var mm = yymmdd.substr(4,6);
-    var dd = yymmdd.substr(6,8);
+    var yy = yymmdd.substring(0,4);
+    var mm = yymmdd.substring(4,6);
+    var dd = yymmdd.substring(6,8);
 
     alert(yy + "년" + mm + "월" + dd + "일");
   }
