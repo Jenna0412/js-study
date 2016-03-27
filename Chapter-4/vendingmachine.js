@@ -1,12 +1,26 @@
-var colas = ["콜라","콜라","콜라","콜라","콜라"];
+var colas = ["cola","cola","cola","cola","cola"];
 var i = 0;
+var count = colas.length;
 
-console.log("콜라를 뽑습니다.");
-for (i = 0; i < colas.length; i++) {
-  colas.pop(i);
-  console.log("콜라를 뽑았어요. 콜라가 "+ colas.length + "개 남았어요.");
+function VendingMachine() {
+  for(i = 0; i < count; i++) {
+    var cost = prompt("음료는 100원입니다. 금액을 투입해주세요.");
+    if(cost === null) {
+      break;
+    }
+    if(cost < 100) {
+      alert("금액이 부족합니다.");
+    }
+    if(cost >= 100) {
+      colas.pop();
+      alert("음료를 뽑았습니다. 거스름돈 : " + (cost-100));
+      cost = cost - 100;
+      console.log(colas);
+    }
+  }
+  if(colas.length === 0) {
+    alert("음료 품절");
+  }
 }
 
-if(colas.length === 0){
-  console.log("콜라가 매진되었어요.");
-}
+VendingMachine(colas);
